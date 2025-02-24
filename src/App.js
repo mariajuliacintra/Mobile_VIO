@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import Login from "./screens/Login"
+import Cadastro from './screens/Cadastro';
 
 export default function App() {
   return (
     <View style={styles.container}>
-       <Login></Login>
+       <Cadastro/>
     </View>
   );
 }
@@ -13,7 +14,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor:'#FEDAEC'
   },
   box1: {
     width: 50,
