@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import {View, Text, TextInput, TouchableOpacity, Alert, StyleSheet} from "react-native";
+import {View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Button} from "react-native";
 import api from '../axios/axios'
 
-export default function Cadastro(){
+export default function Cadastro({ navigation }){
     const [user, setUser] = useState({
         cpf:"", 
         email:"", 
@@ -57,6 +57,7 @@ export default function Cadastro(){
         <TouchableOpacity onPress={handleCadastro} style={styles.button}>
             <Text>Cadastrar</Text>
         </TouchableOpacity>
+        <Button title="Voltar para Login" onPress={()=> navigation.navigate("Login")}/>
      </View>
     )
 }
@@ -66,6 +67,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: "center",
       alignItems: 'center',
+      backgroundColor: "pink",
     },
     title:{
         fontSize: 28,
