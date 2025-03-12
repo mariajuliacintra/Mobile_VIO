@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Button} from "react-native";
 import api from '../axios/axios'
-
+import Home from './Home'
 export default function Cadastro({ navigation }){
     const [user, setUser] = useState({
         cpf:"", 
@@ -15,6 +15,7 @@ export default function Cadastro({ navigation }){
         await api.postCadastro(user).then(
             (response)=>{
                 Alert.alert("OK", response.data.message)
+                navigation.navigate("Home")
             }, (error)=>{
                 Alert.alert('Error', error.response.data.error)
             }

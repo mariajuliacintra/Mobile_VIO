@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Button} from "react-native";
 import api from '../axios/axios'
 import Cadastro from "./Cadastro";
+import Home from "./Home"
 
 export default function Login({ navigation }){
     const [user, setUser] = useState({
@@ -13,6 +14,7 @@ export default function Login({ navigation }){
         await api.postLogin(user).then(
             (response)=>{
                 Alert.alert("OK", response.data.message)
+                navigation.navigate("Home")
             }, (error)=>{
                 Alert.alert('Error', error.response.data.error)
             }
