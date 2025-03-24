@@ -4,8 +4,10 @@ import api from '../axios/axios'
 import Cadastro from "./Cadastro";
 import Home from "./Home"
 import {Ionicons} from '@expo/vector-icons'
+import {useNavigation} from "@react-navigation/native"
 
-export default function Login({ navigation }){
+export default function Login(){
+    const navigation = useNavigation();
     const [user, setUser] = useState({
         email:'',
         password:'',
@@ -66,11 +68,11 @@ const styles = StyleSheet.create({
         color:"#D9007B"
     },
     input:{
-        width:'100%',
-        height:40,
+        flexDirection:'row',
+        alignItems:'center',
+        width:"100%",
         borderBottomWidth:1,
-        paddingHorizontal:10,
-        marginBottom:20
+        paddingRight:10,
     },
     button:{
         backgroundColor:'#D9007B',

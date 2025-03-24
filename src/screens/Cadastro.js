@@ -1,8 +1,11 @@
-import React, {useState} from "react";
+import React, {use, useState} from "react";
 import {View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Button} from "react-native";
 import api from '../axios/axios'
 import Home from './Home'
-export default function Cadastro({ navigation }){
+import { useNavigation } from '@react-navigation/native';
+
+export default function Cadastro(){
+    const navigation = useNavigation();
     const [user, setUser] = useState({
         cpf:"", 
         email:"", 
