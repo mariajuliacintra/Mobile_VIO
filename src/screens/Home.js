@@ -5,20 +5,24 @@ import CadastroEvento from "./CadastroEvento";
 
 export default function Home({ navigation }){
     return(
-        <View style={styles.container}>
-            <TouchableOpacity onPress={()=> navigation.navigate("CadastroEvento")} style={styles.button}>
-                <Text>Cadastro de Evento</Text>
-            </TouchableOpacity>
-            <Button title="Voltar para Login" onPress={()=> navigation.navigate("Login")}/>
-        </View>
+        <View style={styles.header}>
+       <Button
+       title="Cadastrar Evento"
+       onPress={() => navigation.navigate("CadastroEvento")}
+       />
+
+       <Button
+       title="Cadastrar Ingresso"
+       onPress={() => navigation.navigate("CadastroIngresso")}
+       />
+
+       <Button style={styles.button}
+       title="Cadastrar Organizador"
+       onPress={() => navigation.navigate("CadastroOrganizador")}
+       />
+    </View>
 )}
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: 'center',
-        backgroundColor: "pink",
-    },
     button:{
         backgroundColor:'#D9007B',
         padding:10,
