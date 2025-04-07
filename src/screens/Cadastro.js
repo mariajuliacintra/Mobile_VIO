@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       alignItems: 'center',
       backgroundColor: "pink",
+      width:"100%"
     },
     title:{
         fontSize: 28,
