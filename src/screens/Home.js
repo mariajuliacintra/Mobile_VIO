@@ -20,6 +20,11 @@ export default function Home({ navigation }){
        title="Cadastrar Organizador"
        onPress={() => navigation.navigate("CadastroOrganizador")}
        />
+        <Button
+        style={styles.button}
+        title="Lista de Evento"
+        onPress={() => navigation.navigate("EventoScreen")}
+        />
     </View>
 )}
 const styles = StyleSheet.create({
