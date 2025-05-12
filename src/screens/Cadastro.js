@@ -80,15 +80,16 @@ const styles = StyleSheet.create({
         color:"#D9007B"
     },
     input:{
-        width:'100%',
+        width:'80%',
         height:40,
         borderBottomWidth:1,
         paddingHorizontal:10,
-        marginBottom:20
+        marginBottom:20,
     },
     button:{
         backgroundColor:'#D9007B',
         padding:10,
-        borderRadius:5
+        borderRadius:5,
+        margin:10,  
     }
 })
