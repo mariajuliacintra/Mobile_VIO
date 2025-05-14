@@ -12,8 +12,8 @@ import Layout from "./components/Layout";
 import EventosScreen from "./screens/EventosScreens";
 
 
-
 const Stack = createStackNavigator();
+
 
 export default function App() {
   return (

@@ -1,7 +1,6 @@
 import React, {use, useState} from "react";
 import {View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Button} from "react-native";
 import api from '../axios/axios'
-import Home from './Home'
 import { useNavigation } from '@react-navigation/native';
 
 export default function Cadastro(){
@@ -30,7 +29,7 @@ export default function Cadastro(){
         <Text style={styles.title}>Faça Login</Text>
         <TextInput 
         style={styles.input}
-        placeholder="name"
+        placeholder="Nome"
         value={user.name}
         onChangeText={(value)=> {setUser({...user,'name':value})}}
         />

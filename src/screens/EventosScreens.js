@@ -11,6 +11,7 @@ import {
   TextInput,
   Alert,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function EventosScreen() {
   const [eventos, setEventos] = useState([]);
@@ -45,9 +46,11 @@ export default function EventosScreen() {
     }
   }
 
+  const navigation = useNavigation();
+
   useEffect(() => {
     getEventos();
-  });
+  }, []);
 
   async function getEventos() {
     try {
@@ -73,6 +76,13 @@ export default function EventosScreen() {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+      onPress={() => {
+        navigation.navigate("CadastroEvento");
+      }}
+      >
+        <Text>Criar Novo Evento</Text>
+        </TouchableOpacity>
       <Text style={styles.title}>Eventos Dísponiveis</Text>
       {loading ? (
         <ActivityIndicator size="large" color="pink" />
@@ -87,7 +97,7 @@ export default function EventosScreen() {
             >
               <Text style={styles.eventName}>{item.nome}</Text>
               <Text>{item.local}</Text>
-              <Text>{new Date(item.data_hora).toLocaleString}</Text>
+              <Text>{new Date(item.data_hora).toLocaleString()}</Text>
             </TouchableOpacity>
           )}
         />
